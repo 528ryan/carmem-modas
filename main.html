@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Carmem Modas e Fantasias - Fantasias infantis e adultas, roupas femininas. Black Friday com até 50% OFF. Loja física e online.">
+    <meta name="keywords" content="fantasias, roupas femininas, carnaval, festa infantil, black friday">
+    <meta name="author" content="Carmem Modas e Fantasias">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Carmem Modas e Fantasias - Black Friday">
+    <meta property="og:description" content="Fantasias com até 50% OFF na Black Friday!">
+    <meta property="og:image" content="https://carmemmodas.com.br/images/og-image.jpg">
+    <meta property="og:url" content="https://carmemmodas.com.br">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <title>Carmem Modas e Fantasias - Black Friday</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-pink: #ff69b4;
+            --light-pink: #ffc0cb;
+            --dark-pink: #ff1493;
+            --gold: #ffd700;
+            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+        
+        .navbar-brand {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-weight: bold;
+            color: var(--primary-pink) !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-decoration: none;
+            padding: 0;
+        }
+
+        .brand-text {
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .brand-text div {
+            font-size: 1.4rem;
+            white-space: nowrap;
+        }
+
+        .brand-text div:first-child {
+            font-size: 1.6rem;
+        }
+
+        /* Ajustes responsivos para a navbar brand */
+        @media (max-width: 991px) {
+            .brand-text div {
+                font-size: 1.2rem;
+            }
+            
+            .brand-text div:first-child {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .brand-text div {
+                font-size: 1rem;
+            }
+            
+            .brand-text div:first-child {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .brand-text div {
+                font-size: 0.9rem;
+            }
+            
+            .brand-text div:first-child {
+                font-size: 1rem;
+            }
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .black-friday-banner {
+            background: linear-gradient(45deg, #ff8c00, var(--gold));
+            color: var(--dark-gray);
+            padding: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .value-card {
+            transition: transform 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            height: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .fantasy-highlight {
+            background-color: var(--light-pink);
+            border-radius: 20px;
+            padding: 3rem 0;
+        }
+        
+        .product-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid var(--light-pink);
+        }
+        
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .sales-channel {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--light-gray);
+            height: 100%;
+        }
+        
+        .sales-channel:hover {
+            border-color: var(--primary-pink);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+        }
+        
+        .clothes-section {
+            background-color: var(--light-gray);
+            border-radius: 20px;
+            padding: 3rem 0;
+        }
+        
+        .testimonial-card {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, var(--dark-gray), #555);
+            color: white;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .btn-primary-pink {
+            background-color: var(--primary-pink);
+            border-color: var(--primary-pink);
+            color: white;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-pink:hover {
+            background-color: var(--dark-pink);
+            border-color: var(--dark-pink);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+        
+        .btn-gold {
+            background-color: var(--gold);
+            border-color: var(--gold);
+            color: var(--dark-gray);
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background-color: #ffc400;
+            border-color: #ffc400;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .section-title {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: var(--dark-pink);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .price-tag {
+            background-color: var(--gold);
+            color: var(--dark-gray);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Lazy loading placeholder */
+        img[loading="lazy"] {
+            transition: opacity 0.3s;
+        }
+
+        img[loading="lazy"]:not([src]) {
+            opacity: 0;
+        }
+
+        /* Focus states for accessibility */
+        .card:focus,
+        .btn:focus {
+            outline: 3px solid var(--primary-pink);
+            outline-offset: 2px;
+        }
+
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--dark-gray);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1001;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Melhorias para mobile */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.2rem;
+                line-height: 1.1;
+                max-width: 180px;
+            }
+            
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
+            
+            .hero-section .lead {
+                font-size: 1rem;
+            }
+            
+            .black-friday-banner {
+                font-size: 0.85rem;
+                padding: 0.8rem;
+                margin-bottom: 2rem !important;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .value-card {
+                margin-bottom: 1rem;
+            }
+            
+            .value-card h5 {
+                font-size: 1rem;
+            }
+            
+            .value-card .small {
+                font-size: 0.8rem;
+            }
+            
+            .product-card .card-title {
+                font-size: 1rem;
+            }
+            
+            .sales-channel {
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .sales-channel h4 {
+                font-size: 1.2rem;
+            }
+            
+            .testimonial-card .card-body {
+                padding: 1rem;
+            }
+            
+            .btn-lg {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+            
+            .fantasy-highlight,
+            .clothes-section {
+                padding: 2rem 0;
+            }
+            
+            /* Container padding ajustado */
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            /* Footer responsivo */
+            .footer .col-lg-4 {
+                margin-bottom: 2rem;
+            }
+            
+            .footer h4 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            /* Map responsive */
+            .ratio {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand {
+                font-size: 1rem;
+                max-width: 150px;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.5rem;
+            }
+            
+            .display-4 {
+                font-size: 1.8rem;
+            }
+            
+            .black-friday-banner {
+                font-size: 0.75rem;
+                padding: 0.6rem;
+            }
+            
+            .btn-lg {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .value-card i {
+                font-size: 1.5rem !important;
+            }
+            
+            .sales-channel i {
+                font-size: 2rem !important;
+            }
+            
+            .product-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Ajustes de grid para telas muito pequenas */
+            .row.g-4 {
+                --bs-gutter-x: 1rem;
+                --bs-gutter-y: 1rem;
+            }
+        }
+
+        /* Ajuste específico para o navbar brand em duas linhas */
+        @media (max-width: 991px) {
+            .navbar-brand {
+                white-space: normal;
+                word-wrap: break-word;
+            }
+        }
+
+        /* Melhor espaçamento vertical em mobile */
+        @media (max-width: 768px) {
+            section {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+        }
+
+        /* Otimização de texto em mobile */
+        @media (max-width: 576px) {
+            p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+            
+            .lead {
+                font-size: 1rem;
+                line-height: 1.3;
+            }
+            
+            .card-body p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar com melhor responsividade -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" role="navigation" aria-label="Menu principal">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <div class="brand-text">
+                <div>CARMEM MODAS</div>
+                <div>& FANTASIAS</div>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Busca mobile-friendly -->
+            <form class="d-flex me-3 d-lg-none mt-2 mb-2" role="search">
+                <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar..." aria-label="Buscar">
+                <button class="btn btn-outline-secondary btn-sm" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            
+            <ul class="navbar-nav ms-auto" role="menubar">
+                <li class="nav-item" role="none">
+                    <a class="nav-link" href="#fantasias" role="menuitem">Fantasias</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a class="nav-link" href="#vendas" role="menuitem">Comprar</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a class="nav-link" href="#contato" role="menuitem">Contato</a>
+                </li>
+            </ul>
+            
+            <!-- Busca desktop -->
+            <!-- <form class="d-none d-lg-flex me-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar produtos..." aria-label="Buscar">
+                <button class="btn btn-outline-secondary" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form> -->
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section com melhor responsividade -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <div class="black-friday-banner mb-4 mx-auto" style="max-width: 600px;">
+                🎉 <span class="d-none d-sm-inline">BLACK FRIDAY:</span> FANTASIAS COM ATÉ 50% OFF! 🎉
+            </div>
+            <h1 class="display-4 fw-bold mb-4">A Fantasia Perfeita <span class="d-block d-sm-inline">Começa Aqui!</span></h1>
+            <p class="lead mb-4">Transforme-se nas suas personagens favoritas <span class="d-block d-sm-inline">com qualidade e estilo</span></p>
+            <div class="d-grid gap-2 d-md-block">
+                <a href="https://shopee.com.br/shop/1544462505/recommendation-landing?upstream=" target="_blank" class="btn btn-gold btn-lg">
+                    <i class="fas fa-shopping-bag me-2"></i><span class="d-none d-sm-inline">Ver Ofertas da</span> Black Friday <span class="d-none d-sm-inline">na Shopee</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions com grid otimizado -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-3 g-md-4">
+                <div class="col-6 col-md-3">
+                    <div class="card value-card text-center p-2 p-md-3 h-100">
+                        <i class="fas fa-theater-masks fa-2x mb-3" style="color: var(--primary-pink);"></i>
+                        <h5 class="h6 h5-md">Variedade de Fantasias</h5>
+                        <p class="small text-muted mb-0">Mais de 500 modelos únicos</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card value-card text-center p-2 p-md-3 h-100">
+                        <i class="fas fa-shield-alt fa-2x mb-3" style="color: var(--primary-pink);"></i>
+                        <h5 class="h6 h5-md">Compra Segura</h5>
+                        <p class="small text-muted mb-0">Entrega em todo Brasil</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card value-card text-center p-2 p-md-3 h-100">
+                        <i class="fab fa-whatsapp fa-2x mb-3" style="color: var(--primary-pink);"></i>
+                        <h5 class="h6 h5-md">Atendimento Personalizado</h5>
+                        <p class="small text-muted mb-0">Via WhatsApp 24h</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card value-card text-center p-2 p-md-3 h-100">
+                        <i class="fas fa-store fa-2x mb-3" style="color: var(--primary-pink);"></i>
+                        <h5 class="h6 h5-md">Loja Física</h5>
+                        <p class="small text-muted mb-0">Experimente antes de levar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fantasy Highlight -->
+    <section id="fantasias" class="fantasy-highlight py-5">
+        <div class="container">
+            <h2 class="section-title">Sua Próxima Festa Pede Carmem Modas e Fantasias</h2>
+            <p class="text-center mb-5">Confira nossas fantasias mais vendidas com descontos Black Friday!</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="fantasia_moana.jpg" class="card-img-top" alt="Fantasia Moana">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fantasia Moana</h5>
+                            <div class="price-tag">R$ 59,90</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="fantasia_hulk.jpg" class="card-img-top" alt="Fantasia Hulk">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fantasia Hulk</h5>
+                            <div class="price-tag">R$ 59,90</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="fantasia_homem_aranha.jpg" class="card-img-top" alt="Fantasia Homem Aranha">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fantasia Homem Aranha</h5>
+                            <div class="price-tag">R$ 69,90</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="fantasia_mulher_maravilha.jpg" class="card-img-top" alt="Fantasia Mulher Maravilha">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fantasia Mulher Maravilha</h5>
+                            <div class="price-tag">R$ 59,90</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="https://shopee.com.br/shop/1544462505/recommendation-landing?upstream=" target="_blank" class="btn btn-primary-pink btn-lg">
+                    <i class="fas fa-shopping-cart me-2"></i>Comprar Todas as Fantasias na Shopee
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sales Channels com melhor responsividade -->
+    <section id="vendas" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Compre Onde For <span class="d-block d-sm-inline">Mais Fácil Para Você!</span></h2>
+            
+            <div class="row g-3 g-md-4 mt-2 mt-md-4">
+                <div class="col-12 col-md-4">
+                    <div class="sales-channel text-center">
+                        <div class="mb-3">
+                            <i class="fab fa-shopify fa-3x" style="color: #ff69b4;"></i>
+                        </div>
+                        <h4>Shopee</h4>
+                        <p class="mb-3">Promoções Exclusivas e <span class="d-block d-sm-inline">Frete para todo o Brasil.</span></p>
+                        <div class="d-grid">
+                            <a href="https://shopee.com.br/shop/1544462505/recommendation-landing?upstream=" target="_blank" class="btn btn-primary-pink">Ir para Shopee</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="sales-channel text-center">
+                        <div class="mb-3">
+                            <i class="fab fa-whatsapp fa-3x" style="color: #25d366;"></i>
+                        </div>
+                        <h4>WhatsApp</h4>
+                        <p class="mb-3">Catálogo Completo e <span class="d-block d-sm-inline">Encomendas/Dúvidas Personalizadas.</span></p>
+                        <div class="d-grid">
+                            <a href="https://wa.me/5511968541111?text=Olá! Gostaria de ver o catálogo de fantasias!" target="_blank" class="btn btn-success">Chamar no WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="sales-channel text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-store fa-3x" style="color: #333;"></i>
+                        </div>
+                        <h4>Loja Física</h4>
+                        <p class="mb-3">Experimente antes de levar e <span class="d-block d-sm-inline">receba atendimento exclusivo.</span></p>
+                        <div class="d-grid">
+                            <a href="https://wa.me/5511968541111?text=Olá! Gostaria de saber mais sobre a loja física e horários!" target="_blank" class="btn btn-dark">Ver Endereço e Horário</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clothes Section -->
+    <section class="clothes-section py-5">
+        <div class="container">
+            <h2 class="section-title">Elegância e Estilo: Conheça Nossa Moda Casual</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="vestido_elegante.jpg" class="card-img-top" alt="Vestido Elegante">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Vestido Elegante</h5>
+                            <div class="price-tag">R$ 79,90</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="agasalho_time.jpg" class="card-img-top" alt="Agasalho de Time">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Agasalho de Time</h5>
+                            <div class="price-tag">R$ 149,90</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="camisa_time.jpg" class="card-img-top" alt="Camisa de Time">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Camisa de Time</h5>
+                            <div class="price-tag">R$ 129,90</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="https://wa.me/5511968541111?text=Olá! Gostaria de ver o catálogo de roupas!" target="_blank" class="btn btn-outline-dark">
+                    <i class="fab fa-whatsapp me-2"></i>Ver Catálogo de Roupas no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials and Location -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Visite Nossa Loja Física e Encante-se!</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h4 class="mb-4">O Que Nossos Clientes Dizem</h4>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="card testimonial-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                    <p class="card-text">"As fantasias são lindas e de excelente qualidade! Minha filha amou a fantasia de princesa!"</p>
+                                    <small class="text-muted">- Maria Silva</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card testimonial-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                    <p class="card-text">"Atendimento excelente e produtos de ótima qualidade. Recomendo muito!"</p>
+                                    <small class="text-muted">- João Pereira</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h4 class="mb-4">Nossa Localização</h4>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1536.1081315588053!2d-46.59604425666985!3d-23.693783640155534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce44791b411b77%3A0x2a7fb1099ab5e471!2sCarmem%20Modas!5e0!3m2!1spt-BR!2sbr!4v1762543517096!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <a href="https://maps.google.com/?q=Carmem+Modas" target="_blank" class="btn btn-outline-primary">
+                            <i class="fas fa-map-marker-alt me-2"></i>Abrir Local no Mapa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="mb-4">Fique por Dentro das Novidades</h4>
+                    <p>Receba ofertas exclusivas e novidades diretamente no seu WhatsApp!</p>
+                    <form id="newsletter-form">
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Seu WhatsApp" required>
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100">
+                            Cadastre-se e Ganhe 10% OFF no WhatsApp
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h4 class="mb-4">Contato</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="https://wa.me/5511968541111" target="_blank" class="text-white text-decoration-none">
+                                <i class="fab fa-whatsapp me-2"></i>(11) 96854-1111
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://instagram.com/carmemmodasefantasias" target="_blank" class="text-white text-decoration-none">
+                                <i class="fab fa-instagram me-2"></i>@carmemmodasefantasias
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://shopee.com.br/shop/1544462505/recommendation-landing?upstream=" target="_blank" class="text-white text-decoration-none">
+                                <i class="fab fa-shopify me-2"></i>Loja na Shopee
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h4 class="mb-4">Horário de Funcionamento</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-1">Segunda a Sexta: 9h às 18h</li>
+                        <li class="mb-1">Sábado: 9h às 16h</li>
+                        <li>Domingo: Fechado</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="text-center">
+                <p>&copy; 2023 Carmem Modas e Fantasias. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5511968541111?text=Olá! Gostaria de saber mais sobre os produtos!" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling para links de navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animação de entrada dos cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.value-card, .product-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // WhatsApp click tracking
+        document.querySelectorAll('a[href*="wa.me"]').forEach(element => {
+            element.addEventListener('click', () => {
+                // Analytics tracking
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        event_category: 'WhatsApp',
+                        event_label: 'Contact Button'
+                    });
+                }
+            });
+        });
+
+        // Form validation - Newsletter
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const phone = this.querySelector('input[type="tel"]').value;
+            
+            // Validação básica do telefone
+            if (phone.length < 10) {
+                alert('Por favor, insira um número de telefone válido');
+                return;
+            }
+            
+            // Redirect to WhatsApp with pre-filled message
+            const message = encodeURIComponent('Olá! Gostaria de receber ofertas exclusivas e ganhar 10% OFF!');
+            window.open(`https://wa.me/5511968541111?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
