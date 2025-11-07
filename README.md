@@ -10,6 +10,10 @@ A Carmem Modas & Fantasias é especializada em:
 - ⚽ **Camisas e agasalhos esportivos**
 - 🎉 **Acessórios para festas** e eventos especiais
 
+## 🚀 Acesse o Site
+
+🌐 **Site Online**: [https://528ryan.github.io/carmem-modas/](https://528ryan.github.io/carmem-modas/)
+
 ## 🛒 Onde Comprar
 
 ### 🛍️ **Shopee Oficial**
@@ -48,7 +52,7 @@ Experimente antes de comprar! Consulte endereço e horários pelo WhatsApp.
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/[seu-usuario]/carmem-modas.git
+git clone https://github.com/528ryan/carmem-modas.git
 ```
 
 2. Navegue até a pasta:
@@ -56,7 +60,7 @@ git clone https://github.com/[seu-usuario]/carmem-modas.git
 cd carmem-modas
 ```
 
-3. Abra o arquivo `main.html` no seu navegador ou use um servidor local:
+3. Abra o arquivo `index.html` no seu navegador ou use um servidor local:
 ```bash
 # Usando Python
 python -m http.server 3000
@@ -69,7 +73,7 @@ npx http-server .
 
 ```
 carmem-modas/
-├── main.html          # Página principal
+├── index.html         # Página principal ⭐
 ├── README.md          # Documentação
 ├── .gitignore         # Arquivos ignorados pelo Git
 └── images/            # Imagens do site (futuramente)
